@@ -1,0 +1,105 @@
+:root {
+  font-family: "Segoe UI", "Noto Sans JP", sans-serif;
+  color: #182032;
+  background: #f2f5f9;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+h1, h2, p { margin-top: 0; }
+h1 {
+  margin-bottom: 8px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.04em;
+}
+h2 { margin-bottom: 20px; font-size: 1.25rem; }
+.eyebrow {
+  margin-bottom: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+.muted { color: #727c8f; }
+.summary-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.card {
+  padding: 24px;
+  margin-bottom: 16px;
+  border: 1px solid #dce2ea;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(23, 32, 51, 0.05);
+}
+.card strong { font-size: 1.65rem; }
+.score-card { background: #172033; color: #fff; }
+.score-card .muted { color: #aeb7c7; }
+.score-wrap { display: flex; align-items: baseline; gap: 8px; }
+.score-wrap strong { font-size: 3.8rem; line-height: 1; }
+.chart {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: end;
+  gap: 12px;
+  min-height: 260px;
+  padding-top: 30px;
+  border-bottom: 1px solid #dce2ea;
+}
+.chart-column {
+  display: grid;
+  grid-template-rows: 24px 200px 32px;
+  align-items: end;
+  justify-items: center;
+  height: 256px;
+}
+.chart-bar {
+  width: min(42px, 70%);
+  min-height: 3px;
+  border-radius: 10px 10px 0 0;
+  background: #263f73;
+}
+.chart-value, .chart-day { font-size: 0.8rem; color: #667084; }
+.advice-list { display: grid; gap: 12px; }
+.advice-item {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+  border-radius: 14px;
+  background: #f2f5f9;
+}
+.advice-item span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #172033;
+  color: #fff;
+  font-weight: 700;
+}
+.advice-item p { margin: 5px 0 0; line-height: 1.65; }
+.error {
+  padding: 16px;
+  border-radius: 12px;
+  background: #fff1f1;
+  color: #a11d1d;
+}
+@media (max-width: 820px) {
+  .summary-grid { grid-template-columns: 1fr 1fr; }
+  .score-card { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .summary-grid { grid-template-columns: 1fr; }
+  .chart { gap: 5px; }
+  .chart-column { grid-template-rows: 22px 160px 30px; height: 212px; }
+  .chart-bar { width: 70%; }
+}

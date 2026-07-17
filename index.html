@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>睡眠ダッシュボード</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">SLEEP REPORT</p>
+      <h1>今週の睡眠ダッシュボード</h1>
+      <p id="weekRange" class="muted">読み込み中...</p>
+    </header>
+
+    <section class="summary-grid">
+      <article class="card score-card">
+        <p>今週の睡眠スコア</p>
+        <div class="score-wrap"><strong id="weeklyScore">--</strong><span>/ 100</span></div>
+        <p id="recordCount" class="muted">記録 -- 件</p>
+      </article>
+      <article class="card"><p>平均睡眠時間</p><strong id="sleepDuration">--</strong></article>
+      <article class="card"><p>平均温度</p><strong id="temperature">--</strong></article>
+      <article class="card"><p>平均湿度</p><strong id="humidity">--</strong></article>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">TREND</p>
+      <h2>過去7日間の睡眠スコア推移</h2>
+      <div id="chart" class="chart"></div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">ADVICE</p>
+      <h2>これからどうするべきか</h2>
+      <div id="adviceList" class="advice-list"><p class="muted">読み込み中...</p></div>
+    </section>
+
+    <p id="errorMessage" class="error" hidden></p>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
